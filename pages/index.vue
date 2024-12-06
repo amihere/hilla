@@ -31,9 +31,6 @@ function getInitials(name: string) {
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Source</SelectLabel>
-              <SelectItem value="etie4">
-                Etie4
-              </SelectItem>
               <template v-for="source in sources" :key="source.id">
                 <SelectItem :value="source.id">
                   {{ source.label }}
