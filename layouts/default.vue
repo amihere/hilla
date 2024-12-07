@@ -1,26 +1,14 @@
 <script setup lang="ts">
-
+import { ScrollArea } from '@/components/ui/scroll-area'
 </script>
 
 <template>
-  <div class="layout">
-    <div class="bg-gray-50">
-      <Adsbygoogle ad-format="vertical" data-ad-full-width-responsive="true" />
-    </div>
-    <div class="px-5 py-7 w-full max-w-3xl mx-auto">
+  <div class="flex flex-col">
+    <ScrollArea className="px-5 py-7 w-full max-w-2xl mx-auto h-[calc(100dvh-155px)]">
       <slot />
-    </div>
-    <div class="bg-gray-50">
-      <Adsbygoogle ad-format="vertical" data-ad-full-width-responsive="true" />
+    </ScrollArea>
+    <div class="bg-gray-50 h-[150px]">
+      <!-- <Adsbygoogle ad-format="horizontal" data-ad-full-width-responsive="true" /> -->
     </div>
   </div>
 </template>
-
-<style scoped>
-.layout {
-  display: grid;
-  grid-template-columns: 200px 1fr 200px;
-  overflow: hidden;
-  height: 100vh;
-}
-</style>
