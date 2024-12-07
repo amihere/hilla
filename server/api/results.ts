@@ -23,6 +23,6 @@ export default defineEventHandler(async (event) => {
 		.orderBy(desc(vote.date))
 		.limit(15)
 		.innerJoin(candidate, eq(vote.candidateId, candidate.id))
-		.innerJoin(party, eq(candidate.partyId, candidate.partyId));
+		.innerJoin(party, eq(candidate.partyId, party.id));
 	return results;
 });

@@ -56,7 +56,7 @@ async function fetchResults() {
     results.value = mapped as Result[]
     updatedAt.value = data[0]?.updatedAt ? new Date(data[0]?.updatedAt) : new Date()
   } catch (error) {
-    toast.error("A problem occured while fetching results")
+    toast.error("A problem occurred while fetching results")
   } finally {
     loading.value = false
   }
@@ -74,15 +74,15 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="pt-6">
-    <h1 class="text-center">ELECTIONS O</h1>
+  <div>
     <template v-if="status === 'pending'">
-      <div class="w-full h-[calc(100dvh-150px)]">
+      <div class="w-full h-[calc(100dvh-0px)]">
         <SymbolIcon class="size-12 animate-spin mx-auto" />
       </div>
     </template>
     <template v-if="status === 'success'">
-      <div class="space-y-7 pt-7 h-[200px]">
+      <div class="space-y-7 pt-5">
+        <h1 class="text-center">ELECTIONS O</h1>
         <div class="flex flex-col items-center space-y-3">
           <div class="space-y-2 w-full px-1 flex flex-col items-center">
             <Label>Select your preferred media outlet</Label>
@@ -112,7 +112,7 @@ onMounted(async () => {
         </div>
       </div>
 
-      <ScrollArea className="w-full max-w-3xl mx-auto h-[calc(100dvh-350px)] flex flex-col gap-y-8 py-7 px-4">
+      <ScrollArea className="w-full max-w-3xl mx-auto h-[calc(100dvh-166px)] flex flex-col gap-y-8 py-7 px-4">
         <!-- PRESIDENTIAL -->
         <section class="space-y-6">
           <div class="">
