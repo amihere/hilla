@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 		head: {
 			charset: "utf-8",
 			viewport: "width=device-width, initial-scale=1",
-			title: "Hilla",
+			title: "Ghana Elections Results",
 			meta: [],
 		},
 	},
@@ -26,5 +26,9 @@ export default defineNuxtConfig({
 	googleAdsense: {
 		id: process.env.GOOGLE_ADSENSE_ID,
 		test: false,
+	},
+	runtimeConfig: {
+		dbUrl: process.env.DB_URL,
+		dbToken: process.env.DB_AUTH_TOKEN,
 	},
 });
