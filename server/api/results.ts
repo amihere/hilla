@@ -1,11 +1,10 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, desc } from "drizzle-orm";
 import { getDb } from "~/db/database";
-import { candidate, medium, party, race, vote } from "~/db/schema";
+import { candidate, party, vote } from "~/db/schema";
 
 export default defineEventHandler(async (event) => {
 	const query = getQuery(event);
 	const selectedMedium = Number.parseInt(String(query.medium) || "1");
-	console.log(selectedMedium);
 
 	const db = await getDb();
 	const results = await db
@@ -21,6 +20,8 @@ export default defineEventHandler(async (event) => {
 		})
 		.from(vote)
 		.where(and(eq(vote.raceId, 1), eq(vote.mediumId, selectedMedium)))
+		.orderBy(desc(vote.date))
+		.limit(15)
 		.innerJoin(candidate, eq(vote.candidateId, candidate.id))
 		.innerJoin(party, eq(candidate.partyId, candidate.partyId));
 	return results;
