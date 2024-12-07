@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { Toaster } from '@/components/ui/sonner'
 </script>
 
 <template>
+  <Toaster rich-colors />
   <div class="flex flex-col">
     <slot />
     <div class="bg-gray-50 h-[150px]">

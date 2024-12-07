@@ -2,7 +2,7 @@ import { format, formatDistanceToNow } from "date-fns";
 
 const decimalFormatter = new Intl.NumberFormat("en-UK", {
 	minimumFractionDigits: 2,
-	maximumFractionDigits: 2,
+	maximumFractionDigits: 4,
 });
 
 export function formatDate(date: Date) {
